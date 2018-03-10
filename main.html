@@ -1,9 +1,13 @@
 <!DOCTYPE html>  
-<html xmlns="http://www.w3.org/1999/xhtml">  
-<head>  
-    <title>HTML5 GetUserMedia Demo</title>  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />  
-</head>  
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>Document</title>
+    <script src="js/jquery3.2.1.min.js"></script>
+    <script src="js/rem.js"></script>
+    <script src="js/index.js"></script>
+</head>
 <body>  
     <input type="button" title="开启摄像头" value="开启摄像头" onclick="getMedia();" /><br />  
     <video height="120px" autoplay="autoplay"></video><hr />  
@@ -26,7 +30,7 @@
         window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;  
   
         var exArray = []; //存储设备源ID  
-        MediaStreamTrack.getSources(function (sourceInfos) {  
+        MediaStreamTrack.getConstraints(function (sourceInfos) {  
             for (var i = 0; i != sourceInfos.length; ++i) {  
                 var sourceInfo = sourceInfos[i];  
                 //这里会遍历audio,video，所以要加以区分  
