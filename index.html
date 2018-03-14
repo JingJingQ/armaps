@@ -67,7 +67,6 @@
             else {  
                 video.src = window.URL && window.URL.createObjectURL(stream) || stream; 
                 var context = canvas.getContext("2d");
-                  
                  drawVideoAtCanvas(video,context);
 
             }  
@@ -90,7 +89,7 @@
         // 将视频帧绘制到Canvas对象上,Canvas每60ms切换帧，形成肉眼视频效果  
         function drawVideoAtCanvas(video,context) {  
             window.setInterval(function () {  
-                context.drawImage(video, 0, 0,90,120); 
+                context.drawImage(video, 0, 0,500,700); 
                 //设置字体样式
                  context.font = "30px";
                  //设置字体填充颜色
