@@ -31,7 +31,6 @@
 </body>
 </html>
 <script type="text/javascript">
-    // 百度地图API功能
     var map = new BMap.Map("l-map");
     var geolocation = new BMap.Geolocation();
     geolocation.getCurrentPosition(function (r) {
@@ -40,7 +39,7 @@
             map.addOverlay(mk);
             map.panTo(r.point);
             var pointA = new BMap.Point(r.point.lng, r.point.lat);
-            map.centerAndZoom(pointA, 11);
+            map.centerAndZoom(pointA, 18);
             // 距离
 
             /////////////////////////////
@@ -69,7 +68,7 @@
             };
             ///////////////////////////////////////////////////////////
             var local = new BMap.LocalSearch(map, options);
-            local.searchNearby(["公园", "饭店", "酒店", "小吃"], pointA, 500);
+            local.searchNearby(["小吃", "商场", "酒店", "公园"], pointA, 500);
         }
         else {
             alert('failed' + this.getStatus());

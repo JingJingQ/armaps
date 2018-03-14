@@ -11,32 +11,39 @@
             width: 100%;
             height: 100%;
         }
-        .box{
+        /*.box{
             width: 100%;
             height: 9rem;
             border: 0.01rem solid #000;
             margin: 0.02rem auto;
-
         }
         .box video{
             width: 100%;
             height: 100%;
+        }*/
+        canvas{
+            width: 100%;
+            height: 9rem;
         }
     </style>
 </head>
 <body>
-    <input type="button" title="开启摄像头" value="开启摄像头" onclick="getMedia();" /><br /> 
+    <input type="button" title="开启摄像头" value="开启摄像头" onclick="getMedia();" /><br/> 
     <div class="box">
         <video autoplay="autoplay"></video>
     </div> 
     <canvas></canvas>
 </body>
 </html>
-
-
 <script>
     var video = document.querySelector('video'); 
     var canvas=document.querySelector("canvas");
+    //设置字体样式
+    ctx.font = "30px Courier New";
+    //设置字体填充颜色
+    ctx.fillStyle = "blue";
+    //从坐标点(50,50)开始绘制文字
+    ctx.fillText("公园", 50, 50);
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;  
         window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;  
   
@@ -67,7 +74,6 @@
                 alert('Native device media streaming (getUserMedia) not supported in this browser.');  
             }  
         }  
-  
         function successFunc(stream) {  
             //alert('Succeed to get media!');  
             if (video.mozSrcObject !== undefined) {  
@@ -103,15 +109,15 @@
         }  
   
         //获取音频格式  wEwOE1p1eXOiagi88LenfO2GBA7491tN
-        function getAudioType(element) {  
-            if (element.canPlayType) {  
-                if (element.canPlayType('audio/mp4; codecs="mp4a.40.5"') !== '') {  
-                    return ('aac');  
-                } else if (element.canPlayType('audio/ogg; codecs="vorbis"') !== '') {  
-                    return ("ogg");  
-                }  
-            }  
-            return false;  
-        }  
+        // function getAudioType(element) {  
+        //     if (element.canPlayType) {  
+        //         if (element.canPlayType('audio/mp4; codecs="mp4a.40.5"') !== '') {  
+        //             return ('aac');  
+        //         } else if (element.canPlayType('audio/ogg; codecs="vorbis"') !== '') {  
+        //             return ("ogg");  
+        //         }  
+        //     }  
+        //     return false;  
+        // }  
   
 </script>
