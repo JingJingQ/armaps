@@ -27,12 +27,7 @@
 <script>
     var video = document.querySelector('video'); 
     var canvas=document.querySelector("canvas");
-    //设置字体样式
-    ctx.font = "30px Courier New";
-    //设置字体填充颜色
-    ctx.fillStyle = "blue";
-    //从坐标点(50,50)开始绘制文字
-    ctx.fillText("公园", 50, 50);
+    
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;  
         window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;  
   
@@ -72,7 +67,13 @@
             else {  
                 video.src = window.URL && window.URL.createObjectURL(stream) || stream; 
                 var context = canvas.getContext("2d");
-                 drawVideoAtCanvas(video,context); 
+                 drawVideoAtCanvas(video,context);
+                 //设置字体样式
+                 ctx.font = "30px";
+                 //设置字体填充颜色
+                 ctx.fillStyle = "blue";
+                 //从坐标点(50,50)开始绘制文字
+                 ctx.fillText("公园", 50, 50); 
             }  
   
             //video.play();  
