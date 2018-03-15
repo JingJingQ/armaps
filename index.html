@@ -11,10 +11,16 @@
             width: 100%;
             height: 100%;
         }
+        video{
+        	width:0;
+        	height:0;
+        }
         canvas{
-            width: 100%;
-            height: 100%;
-            border: 0.01rem solid #000;
+            width: 100vh;
+            height: 100vh;
+            position:absolute;
+            top:0.1rem;
+            left:0;
         }
     </style>
 </head>
@@ -89,7 +95,7 @@
         // 将视频帧绘制到Canvas对象上,Canvas每60ms切换帧，形成肉眼视频效果  
         function drawVideoAtCanvas(video,context) {  
             window.setInterval(function () {  
-                context.drawImage(video, 0, 0,500,700); 
+                context.drawImage(video, 0, 0,100%,100%); 
                 //设置字体样式
                  context.font = "30px";
                  //设置字体填充颜色
