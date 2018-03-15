@@ -59,6 +59,8 @@
                                 s.push(results[i].getPoi(j).title+'---'+ distance +'米');
 
                                 document.getElementById("r-result").innerHTML = s.join("<br/>");
+                                window.top.posArr=results;
+                                window.top.hereObj=pointA;
                             }
 
                         }

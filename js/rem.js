@@ -1,5 +1,5 @@
 window.onload=function(){
-    resize(1080,"x");
+    resize(750,"x");
 }
 function resize(originSize,type){
     // originSize = 750;
@@ -15,9 +15,9 @@ function resize(originSize,type){
         document.getElementsByTagName("html")[0].style.fontSize=scale;
     }
 }
-resize(1080,"x");
+resize(750,"x");
 
 window.onresize = function(){
-   resize(1080,"x"); 
+   resize(750,"x"); 
 }
 
