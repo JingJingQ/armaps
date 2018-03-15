@@ -1,53 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wEwOE1p1eXOiagi88LenfO2GBA7491tN"></script>
-
-<title>百度地图的定位</title>
-</head>
-<body>
-    <div id="allmap" style="width: 100%;height: 500px;"></div>
-
-
-<script type="text/javascript">
-    // 百度地图API功能
-    var map = new BMap.Map("allmap");
-    var point = new BMap.Point(108.95,34.27);
-    map.centerAndZoom(point,12);
-
-    var geolocation = new BMap.Geolocation();
-    geolocation.getCurrentPosition(function(r){console.log(r.point)
-        if(this.getStatus() == BMAP_STATUS_SUCCESS){
-            var mk = new BMap.Marker(r.point);
-            map.addOverlay(mk);//标出所在地
-            map.panTo(r.point);//地图中心移动
-            alert('您的位置：'+r.point.lng+','+r.point.lat);
-            var point = new BMap.Point(r.point.lng,r.point.lat);//用所定位的经纬度查找所在地省市街道等信息
-            var gc = new BMap.Geocoder();
-            gc.getLocation(point, function(rs){
-               var addComp = rs.addressComponents; 
-               console.log(rs.address);//地址信息
-               alert(rs.address);//弹出所在地址
-
-            });
-        }else {
-            alert('failed'+this.getStatus());
-        }        
-    },{enableHighAccuracy: true})
-</script>
-
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
+<!doctype html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport"  
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+    <title>Document</title>  
+</head>  
+<body>  
+alpha:<span id="alpha"></span><br/>  
+beta:<span id="beta"></span><br/>  
+gamma:<span id="gamma"></span><br/>  
+</body>  
+<script>  
+    if (window.DeviceOrientationEvent) {  
+        window.addEventListener('deviceorientation', function (event) {  
+            var a = document.getElementById('alpha'),  
+                b = document.getElementById('beta'),  
+                g = document.getElementById('gamma'),  
+                alpha = event.alpha,  
+                beta = event.beta,  
+                gamma = event.gamma;  
+  
+            a.innerHTML = Math.round(alpha);  
+            b.innerHTML = Math.round(beta);  
+            g.innerHTML = Math.round(gamma);  
+  
+        }, false);  
+    } else {  
+        document.querySelector('body').innerHTML = '你的浏览器不支持陀螺仪';  
+    }  
+</script>  
+</html>  
