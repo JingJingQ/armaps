@@ -5,12 +5,12 @@
     <meta name="viewport"  
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">  
     <meta http-equiv="X-UA-Compatible" content="ie=edge">  
-    <title>Document</title>  
+    <title>陀螺仪获取数据</title>  
 </head>  
 <body>  
-alpha:<span id="alpha"></span><br/>  
-beta:<span id="beta"></span><br/>  
-gamma:<span id="gamma"></span><br/>  
+alpha（移动设备水平放置时，绕z轴旋转的角度，数值为0度到360度）:<span id="alpha"></span><br/>  
+beta（移动设备水平放置时，绕X轴旋转的角度，数值为-180度到180度）:<span id="beta"></span><br/>  
+gamma（移动设备水平放置时，绕Y轴旋转的角度，数值为-90度到90度）:<span id="gamma"></span><br/>  
 </body>  
 <script>  
     if (window.DeviceOrientationEvent) {  
@@ -28,7 +28,7 @@ gamma:<span id="gamma"></span><br/>
   
         }, false);  
     } else {  
-        document.querySelector('body').innerHTML = '你的浏览器不支持陀螺仪';  
+        document.querySelector('body').innerHTML = '您的设备不支持陀螺仪';  
     }  
 </script>  
 </html>  
